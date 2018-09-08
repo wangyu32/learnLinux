@@ -6,6 +6,8 @@ type
 wy=wangyu
 echo $wy
 
-
+### 2018-09-08
+git use ssh 
+url： https://www.cnblogs.com/ldq2016/p/7418206.html
 
 
