@@ -10,4 +10,7 @@ echo $wy
 git use ssh 
 url： https://www.cnblogs.com/ldq2016/p/7418206.html
 
+https://www.cnblogs.com/superGG1990/p/6844952.html
+
+
 
