@@ -1,3 +1,21 @@
+
+### 2018-09-09
+```
+1. df -h
+2. du -h
+   du -h --max-depth=1
+```
+
+### 2018-09-09
+```
+1. echo $RANDOM
+2. set #列出都有环境变量
+3. PS1='[\u@\h \w \A #\#]\$'
+4. echo $$
+5. echo $?
+6. locale -a
+```
+
 ### 2018-09-06
 ```
 14.Bash shell
@@ -7,6 +25,7 @@ type
 wy=wangyu
 echo $wy
 ```
+
 ### 2018-09-08
 ```
 1. git use ssh 
@@ -23,17 +42,10 @@ https://www.cnblogs.com/superGG1990/p/6844952.html
    myname="$name its me"
    echo $myname
 # 单引号将使变量失去内容
-```   
 5. uname -r
 6. `` 中的命令会被先执行
    ls -l `locate crontab`
-### 2018-09-09
-1. echo $RANDOM
-2. set #列出都有环境变量
-3. PS1='[\u@\h \w \A #\#]\$'
-4. echo $$
-5. echo $?
-6. locale -a
+```
 
 
 
