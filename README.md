@@ -4,6 +4,8 @@
 git 删除文件或目录时，使用命令git add 不会直接将删除的文件或目录添加到版本控制中，
 需要使用gir rm filename 命令指定删除
 
+declare 变量定义
+
 
 ```
 
