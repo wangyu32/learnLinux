@@ -1,11 +1,70 @@
 
+### 2018-09-12
+```
+ulimit 可以『限制使用者的某些系统资源』的，包括可以开启的档案数量， 可以使用的 CPU 时间，可以使用的内存总量等等
+
+ 1007  vbird=/home/vbird/testing/testing.x.sh
+ 1008  echo ${vbird##/*/}
+ 1009  echo ${vbird#/*/}
+ 1010  echo ${vbird%%/*/}
+ 1011  echo ${vbird%%/*}
+ 1012  echo ${vbird%/*}
+ 1013  echo ${vbird%/testing/TEST}
+ 1014  echo ${vbird/testing/TEST}
+ 1015  echo ${vbird//testing/TEST}
+
+```
+
+
 ### 2018-09-11
 ```
 git 删除文件或目录时，使用命令git add 不会直接将删除的文件或目录添加到版本控制中，
 需要使用gir rm filename 命令指定删除
 
 declare 变量定义
+#定义字符串(默认)
+sum=100+300
+echo $sum
 
+#定义整数
+declare -i sum=100+300
+echo $sum
+
+#export
+declare -x varFromDeclare=haha
+./declareTest1.sh
+
+#定义只读
+declare -r v123=123
+echo $v123
+
+v123=234
+echo $v123
+
+
+#定义数组
+#declare -a array1
+declare -a array1
+array1=v0
+array1[1]=v1
+array1[2]=v2
+array1[3]=v3
+echo 'array[0]='  ${array1[0]}
+echo 'array[1]='  ${array1[1]}
+echo 'array[2]='  ${array1[2]}
+echo 'array[3]='  ${array1[3]}
+echo 'array[4]='  ${array1[4]}
+
+#定义函数
+declare -f 
+add(){
+  echo ${1}
+  echo ${2}
+  echo ${1}+${2} 字符串连接
+  echo $((${1}+${2})) 加法
+}
+
+add 100 200
 
 ```
 
