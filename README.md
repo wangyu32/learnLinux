@@ -1,3 +1,28 @@
+### 2018-09-15
+```
+1.1 > >> 1> 1>> 2> 2>> 区别
+1.2 /dev/null
+1.3 2>&1 将标准输出和错误输出写到一个文件里
+1.4 < << 区别
+2. 命令执行的判断依据： ; , &&, ||
+   eg. ls /tmp/wangyu 2>> /dev/null && echo "exist" || echo "not exist"
+
+
+环境设定档： bashrc, ~/.bashrc, ~/.profile, profile...,/etc/inputrc, source
+万用字符与特殊符号
+[root@linux ~]# ls test* <==那个 * 代表后面不论接几个字符都予以接受
+[root@linux ~]# ls test? <==那个 ? 代表后面『一定』要接『一个』字符
+[root@linux ~]# ls test??? <==那个 ??? 代表『一定要接三个』字符！
+[root@linux ~]# cp test[1-5] /tmp
+# 将 test1, test2, test3, test4, test5 若存在的话，就拷贝到 /tmp
+[root@linux ~]# cp test[!1-5] /tmp
+# 只要不是 test1, test2, test3, test4, test5 之外的其它 test? ，
+# 若存在的话，就拷贝到 /tmp
+[root@linux ~]# cd /lib/modules/`uname -r`/kernel/drivers
+# 被 ` ` 括起来的内容『会先执行
+
+```
+
 ### 2018-09-14
 ```
 登录讯息显示数据： /etc/issue, /etc/motd
@@ -120,7 +145,14 @@ https://www.cnblogs.com/superGG1990/p/6844952.html
    ls -l `locate crontab`
 ```
 
-
+### 2018-09-03
+```
+正规表达法：
+在文件里搜索带wang的字符串
+[root@localhost learnlinux]# grep 'wang' ./*
+./test1.txt:wangyu love study linux
+./test2.txt:wangqi is a student
+```
 
 
 

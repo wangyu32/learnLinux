@@ -1,0 +1,11 @@
+总用量 28
+-rwxr-xr-x. 1 root root   51 9月  11 12:36 declareTest1.sh
+-rwxr-xr-x. 1 root root  617 9月  11 12:58 declareTest.sh
+drwxr-xr-x. 2 root root   41 9月   8 20:33 export
+-rw-r--r--. 1 root root    0 9月  15 17:12 ll.txt
+-rwxr-xr-x. 1 root root   14 9月  11 12:26 makeShCanExe.sh
+-rw-r--r--. 1 root root 3172 9月  15 16:07 README.md
+-rwxr-xr-x. 1 root root  146 9月  11 12:29 read.sh
+-rw-r--r--. 1 root root   20 9月   8 20:12 test1.txt
+-rw-r--r--. 1 root root   47 9月   8 20:12 test2.txt
+-bash: lajsdlka: 未找到命令
