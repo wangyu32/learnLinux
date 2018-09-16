@@ -1,3 +1,11 @@
+### 2018-09-16
+```
+1. echo $PATH | cut -d ':' -f 2
+   echo $PATH | cut -d ':' -f 2,4  2和4
+   echo $PATH | cut -d ':' -f 2-4  2到4
+2. last | grep 'root' |cut -d ' ' -f1
+```
+
 ### 2018-09-15
 ```
 1.1 > >> 1> 1>> 2> 2>> 区别
