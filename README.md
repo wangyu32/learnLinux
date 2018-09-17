@@ -1,3 +1,7 @@
+### 2018-09-17
+```
+1. alias永久有效的办法，在~/.bashrc文件加入alias命令alias cdl='cd /opt/learnLinux'
+```
 ### 2018-09-16
 ```
 1. echo $PATH | cut -d ':' -f 2
