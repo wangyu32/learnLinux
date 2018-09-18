@@ -1,12 +1,46 @@
 ### 2018-09-17
 ```
+1. tee [-a] file 
+   last | tee last.list | cut -d " " -f1
+   last | cut -d " " -f1 | sort | uniq | tee teeTest.txt
+2.  字符转换命令： tr, col, join, paste, expand
+2.1 tr 可以用来删除一段讯息当中的文字，或者是进行文字讯息的替换！
+    tr [-ds] SET1 ...
+eg.
+last | tr '[a-z]' '[A-Z]  小写都转成大写
+
+[root@localhost learnLinux]# echo wangyuyu | tr -d wang
+yuyu
+[root@localhost learnLinux]# echo wangyuyu | tr -s y Y
+wangYuYu
+[root@localhost learnLinux]# echo wangyuyu | tr y Y
+wangYuYu
+
+
+
+    
+```
+### 2018-09-17
+```
 1. alias永久有效的办法，在~/.bashrc文件加入alias命令alias cdl='cd /opt/learnLinux'
+2. 排序命令： sort, wc, uniq
+2.1 sort [-fbMnrtuk] [file or stdin]
+    cat /etc/passwd | sort -t ':' -k 3 -n -r  使用:分割，第3列，纯数字排序，倒叙
+2.2 uniq [-ic]    
+    last | cut -d ' ' -f1 | sort | uniq     去重复 
+    last | cut -d ' ' -f1 | sort | uniq -c  统计次数
+2.3 wc [-lwm]
+    cat /etc/passwd | wc    输出的三个数字中，分别代表： 『行、字数、字符数』
+    cat /etc/passwd | wc -l   
+   
 ```
 ### 2018-09-16
 ```
-1. echo $PATH | cut -d ':' -f 2
+1. cut   cut[-d -f -c]
+   echo $PATH | cut -d ':' -f 2
    echo $PATH | cut -d ':' -f 2,4  2和4
    echo $PATH | cut -d ':' -f 2-4  2到4
+   less cutTest.txt | cut -c 5-
 2. last | grep 'root' |cut -d ' ' -f1
 ```
 
