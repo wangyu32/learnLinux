@@ -14,7 +14,10 @@
 2. paste [-d] file1 file2
    paste /etc/passwd /etc/shadow
    cat /etc/group|paste /etc/passwd /etc/shadow -|head -n 3
-
+3. expand    tab转空格
+   grep 'MANPATH' /etc/man_db.conf | head -n 3 | expand -t 6 - |  cat -A
+4. split [-bl] file PREFIX   文件分割
+   split -b 1k README.md splitTest/README.md
 ```
 ### 2018-09-18
 ```

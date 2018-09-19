@@ -1,0 +1,81 @@
+��定删除
+
+declare 变量定义
+#定义字符串(默认)
+sum=100+300
+echo $sum
+
+#定义整数
+declare -i sum=100+300
+echo $sum
+
+#export
+declare -x varFromDeclare=haha
+./declareTest1.sh
+
+#定义只读
+declare -r v123=123
+echo $v123
+
+v123=234
+echo $v123
+
+
+#定义数组
+#declare -a array1
+declare -a array1
+array1=v0
+array1[1]=v1
+array1[2]=v2
+array1[3]=v3
+echo 'array[0]='  ${array1[0]}
+echo 'array[1]='  ${array1[1]}
+echo 'array[2]='  ${array1[2]}
+echo 'array[3]='  ${array1[3]}
+echo 'array[4]='  ${array1[4]}
+
+#定义函数
+declare -f 
+add(){
+  echo ${1}
+  echo ${2}
+  echo ${1}+${2} 字符串连接
+  echo $((${1}+${2})) 加法
+}
+
+add 100 200
+
+```
+
+### 2018-09-10
+```
+瓜子测试环境硬盘快满了
+1. df -h
+2. du -h
+   du -h --max-depth=1
+```
+
+### 2018-09-09
+```
+1. echo $RANDOM
+2. set #列出都有环境变量
+3. PS1='[\u@\h \w \A #\#]\$'
+4. echo $$
+5. echo $?
+6. locale -a
+```
+
+### 2018-09-06
+```
+14.Bash shell
+man
+alias
+type
+wy=wangyu
+echo $wy
+```
+
+### 2018-09-08
+```
+1. git use ssh 
+url： https://www.cnblogs.co

@@ -1,0 +1,58 @@
+m/ldq2016/p/7418206.html
+https://www.cnblogs.com/superGG1990/p/6844952.html
+
+2. export
+3. unset 
+4. 在变量的设置过程中，单引号与双引号的区别
+   name=wangyu
+   echo $name
+   myname="$name its me"
+   echo $myname
+   myname="$name its me"
+   echo $myname
+# 单引号将使变量失去内容
+5. uname -r
+6. `` 中的命令会被先执行
+   ls -l `locate crontab`
+```
+
+### 2018-09-03
+```
+正规表达法：
+在文件里搜索带wang的字符串
+[root@localhost learnlinux]# grep 'wang' ./*
+./test1.txt:wangyu love study linux
+./test2.txt:wangqi is a student
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

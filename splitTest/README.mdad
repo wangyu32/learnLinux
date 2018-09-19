@@ -1,0 +1,33 @@
+t[!1-5] /tmp
+# 只要不是 test1, test2, test3, test4, test5 之外的其它 test? ，
+# 若存在的话，就拷贝到 /tmp
+[root@linux ~]# cd /lib/modules/`uname -r`/kernel/drivers
+# 被 ` ` 括起来的内容『会先执行
+
+```
+
+### 2018-09-14
+```
+登录讯息显示数据： /etc/issue, /etc/motd
+环境设定档： bashrc, ~/.bashrc, ~/.profile, profile...,/etc/inputrc, source
+
+```
+### 2018-09-12
+```
+ulimit 可以『限制使用者的某些系统资源』的，包括可以开启的档案数量， 可以使用的 CPU 时间，可以使用的内存总量等等
+
+ 1007  vbird=/home/vbird/testing/testing.x.sh
+ 1008  echo ${vbird##/*/}
+ 1009  echo ${vbird#/*/}
+ 1010  echo ${vbird%%/*/}
+ 1011  echo ${vbird%%/*}
+ 1012  echo ${vbird%/*}
+ 1013  echo ${vbird%/testing/TEST}
+ 1014  echo ${vbird/testing/TEST}
+ 1015  echo ${vbird//testing/TEST}
+
+```
+### 2018-09-11
+```
+git 删除文件或目录时，使用命令git add 不会直接将删除的文件或目录添加到版本控制中，
+需要使用gir rm filename 命令�
