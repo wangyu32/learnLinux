@@ -1,4 +1,22 @@
-### 2018-09-17
+### 2018-09-18
+```
+1. join 比较全面的例子 https://www.cnblogs.com/agilework/archive/2012/04/18/2454877.html
+   语　　法：join [-i][-a<1或2>][-e<字符串>][-o<格式>] [-t<字符>][-v<1或2>][-1<栏位>][-2<栏位>][--help] [--version][文件1][文件2] 
+   补充说明：找出两个文件中，指定栏位内容相同的行，并加以合并，再输出到标准输出设备。 
+   join month_cn.txt month_en.txt  
+   join -a1 month_cn.txt month_en.txt 
+   join -a2 month_cn.txt month_en.txt 
+   join -a1 -a2 month_cn.txt month_en.txt 
+   join -o 1.1 1.2 2.2 month_cn.txt month_en.txt   显示file1的第1，2列，file2的第2列
+
+   join -t ':' /etc/passwd /etc/shadow 
+   join -t ':' -1 4 /etc/passwd -2 3 /etc/group
+2. paste [-d] file1 file2
+   paste /etc/passwd /etc/shadow
+   cat /etc/group|paste /etc/passwd /etc/shadow -|head -n 3
+
+```
+### 2018-09-18
 ```
 1. tee [-a] file 
    last | tee last.list | cut -d " " -f1
@@ -15,9 +33,6 @@ yuyu
 wangYuYu
 [root@localhost learnLinux]# echo wangyuyu | tr y Y
 wangYuYu
-
-
-
     
 ```
 ### 2018-09-17
