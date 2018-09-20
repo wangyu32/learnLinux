@@ -1,3 +1,47 @@
+### 2018-09-19
+```
+复习：
+1. cat > catfile   使用 cat 在键盘上面输入一些数据，然后写入一个档案内
+   cat > catfile < somefile 将somefile内容输入到catfile内
+   cat >> catfile < somefile 将somefile内容appedn输入到catfile内
+   cat > catfile <<eof  输入到eof后退出
+```
+
+学习:
+```
+1. finger 用来显示用户的相关信息
+[root@localhost learnLinux]# finger
+Login     Name       Tty      Idle  Login Time   Office     Office Phone   Host
+root      root       tty1       2d  Sep 18 16:10           
+root      root       pts/0          Sep 20 09:33                           (192.168.101.1)
+root      root       pts/1          Sep 20 19:40                           (192.168.101.1)
+[root@localhost learnLinux]# finger root
+Login: root           			Name: root
+Directory: /root                    	Shell: /bin/bash
+On since 二 9月 18 16:10 (CST) on tty1    2 days 4 hours idle
+On since 四 9月 20 09:33 (CST) on pts/0 from 192.168.101.1
+   6 seconds idle
+On since 四 9月 20 19:40 (CST) on pts/1 from 192.168.101.1
+   30 seconds idle
+New mail received 三 9月 19 09:33 2018 (CST)
+     Unread since 一 1月 15 00:18 2018 (CST)
+No Plan.
+[root@localhost learnLinux]# 
+
+2. xargs 参数代换
+xargs [-0epn] command 
+详细学习地址: http://man.linuxde.net/xargs
+xargs命令是给其他命令传递参数的一个过滤器，也是组合多个命令的一个工具。它擅长将标准输入数据转换成命令行参数，xargs能够处理管道或者stdin并将其转换成特定命令的命令参数。xargs也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。xargs的默认命令是echo，空格是默认定界符。这意味着通过管道传递给xargs的输入将会包含换行和空白，不过通过xargs的处理，换行和空白将被空格取代。xargs是构建单行命令的重要组件之一。
+   cut -d':' -f1 < /etc/passwd |head -n 3| xargs finger  将 /etc/passwd 内的第一栏取出，仅取三行，使用 finger 这个指令将每个
+   cut -d':' -f1 < /etc/passwd |head -n 3| xargs -p finger  同上，但是每次执行 finger 时，都要询问使用者是否动作？
+   cut -d':' -f1 < /etc/passwd | xargs -p -n 5 finger   将所有的 /etc/passwd 内的账号都以 finger 查阅，但一次仅查阅五个账号
+   cut -d':' -f1 < /etc/passwd | xargs -p -e'lp' finger  同上，但是当分析到 lp 就结束这串指令？
+结合学习：
+   echo "rootabin" | xargs -da | xargs -p finger  将rootabin字符串使用a分隔，再使用finger分别调用分隔后的字符（用户）
+   cat arg.txt | xargs -I {} ./sk.sh -p {} -1
+   ls *.jpg | xargs -n1 -I cp {} /data/images  复制所有图片文件到 /data/images 目录下：
+   cat url-list.txt | xargs wget -c 假如你有一个文件包含了很多你希望下载的URL，你能够使用xargs下载所有链接：
+```
 ### 2018-09-18
 ```
 1. join 比较全面的例子 https://www.cnblogs.com/agilework/archive/2012/04/18/2454877.html
