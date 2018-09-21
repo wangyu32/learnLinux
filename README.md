@@ -1,3 +1,42 @@
+### 2018-09-20
+```
+grep 与 egrep
+ 1008  vim  regular_express.txt
+ 1009  echo $LANG
+ 1010  LANG=en
+ 1011  export LANg
+ 1012  export LANG
+ 1013  echo $LANG
+ 1014  grep -n 'the' regular_express.txt 
+ 1015  grep -vn 'the' regular_express.txt 
+ 1016  grep -n 't[ae]st' regular_express.txt 
+ 1017  grep -n 'oo' regular_express.txt 
+ 1018  grep -n '[^g]oo' regular_express.txt 
+ 1019  grep -n '[^a-z]oo' regular_express.txt 
+ 1020  grep -n '^the' regular_express.txt 
+ 1021  grep -n '^[a-z]' regular_express.txt 
+ 1022  grep -n '^[^a-zA-Z]' regular_express.txt 
+ 1023  grep -n '\.$' regular_express.txt 
+ 1024  grep -n '^$' regular_express.txt 
+ 1025  grep -v '^$' /etc/rsyslog.conf | grep -v '^#' 
+ 1026  grep -n 'g..d' regular_express.txt 
+ 1027  grep -n 'ooo*' regular_express.txt 
+ 1028  grep -n 'goo*g' regular_express.txt 
+ 1029  grep -n 'g*g' regular_express.txt 
+ 1030  grep -n 'g.*g' regular_express.txt 
+ 1031  grep -n '[0-9][0-9]*' regular_express.txt 
+ 1032  grep -n 'o\{2\}' regular_express.txt 
+ 1033  grep -n 'o\{2,5\}' regular_express.txt 
+ 1034  grep -n 'go\{2,5\}g' regular_express.txt 
+ 1035  grep -n 'go\{2,\}g' regular_express.txt 
+ 1036  source ~/.bashrc 
+ 1037  egrep -n 'go+d' regular_express.txt 
+ 1038  egrep -n 'go?d' regular_express.txt 
+ 1039  egrep -n 'gd|good' regular_express.txt 
+ 1040  egrep -n 'g(la|oo)d' regular_express.txt 
+ 1041  echo 'AxyzxyzxyzC' | egrep 'A(xyz)+C'
+ 1042  egrep -n '[!>]' regular_express.txt 
+```
 ### 2018-09-19
 ```
 复习：
