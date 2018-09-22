@@ -1,3 +1,37 @@
+### 2018-09-21
+```
+printf  打印格式化
+ 1007  vim printf.txt
+ 1008  printf '%s\t %s\t %s\t %s\t %s\t \n' `cat printf.txt'
+ 1009  printf '%s\t %s\t %s\t %s\t %s\t \n' `cat printf.txt`
+ 1010  printf '%10s %5i %5i %5i %8.2f \n' `cat printf.txt |\
+grep -v Name`
+ 1011  printf '%10s %5i %5i %5i %8.1f \n' `cat printf.txt | grep -v Name`
+ 1012  printf '%10s %5i %5i %5.1f %8.1f \n' `cat printf.txt | grep -v Name`
+ 1013  printf '\x45\n'
+
+sed 可以分析 Standard Input (STDIN) 的数据， 然后将数据经过处理后，再将他输出到 standrad out (STDOUT) 的一个工具
+ 1017  nl /etc/passwd | sed -n '2,5d'
+ 1018  nl /etc/passwd | sed '2,5d'
+ 1019  nl /etc/passwd | sed '2d'
+ 1020  nl /etc/passwd | sed '3,$d'
+ 1021  nl /etc/passwd | sed '2a drink tea'
+ 1022  nl /etc/passwd | sed '2,$a drink tea'
+ 1023  nl /etc/passwd | sed '2a drink tea or ....\'
+ 1024  nl /etc/passwd | sed '2a drink tea or ....\
+drink beer?'
+ 1025  nl /etc/passwd | sed '2,5c No2-5 number'
+ 1026  nl /etc/passwd | sed -n '2,5p'
+ 1027  ifconfig
+ 1028  ifconfig ens33
+ 1029  ifconfig ens33 | grep 'inet '
+ 1030  ifconfig ens33 | grep 'inet ' | sed 's/netmask.*$//g'
+ 1031  ifconfig ens33 | grep 'inet ' | sed 's/^.*inet//g' | sed 's/netmask.*$//g'
+
+
+
+
+```
 ### 2018-09-20
 ```
 grep 与 egrep
