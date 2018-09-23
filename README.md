@@ -1,4 +1,25 @@
-### 2018-09-21
+### 2018-09-23
+```
+awk '条件类型 1{动作 1} 条件类型 2{动作 2} ...' filename
+  985  cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1 "\t" $3}'
+  986  cat /etc/passwd
+  987  cdl
+  988  last | awk '{print $1 "\t" $3}'
+  989  last | awk '{print $1 "\t lines: " NR "\t columns: " NF}'
+  990  last | awk '{print $1 "\t" $3}'
+  991  cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1 "\t" $3}'
+  992  cat /etc/passwd | awk 'BEGIN {FS=":"} $3 < 10 {print $1 "\t" $3}'
+
+# 计算总和
+[root@localhost awkTest]# cat pay.txt | awk '{if(NR==1) printf "%10s %10s %10s %10s %10s\n",$1,$2,$3,$4,"Total"} 
+NR>=2{total = $2 + $3 + $4
+printf "%10s %10d %10d %10d %10.2f\n", $1, $2, $3, $4, total}'
+      Name        1st        2nd        3th      Total
+     VBird      23000      24000      25000   72000.00
+    DMTsai      21000      20000      23000   64000.00
+     Bird2      43000      42000      41000  126000.00
+```
+### 2018-09-22
 ```
 printf  打印格式化
  1007  vim printf.txt
@@ -28,11 +49,8 @@ drink beer?'
  1030  ifconfig ens33 | grep 'inet ' | sed 's/netmask.*$//g'
  1031  ifconfig ens33 | grep 'inet ' | sed 's/^.*inet//g' | sed 's/netmask.*$//g'
 
-
-
-
 ```
-### 2018-09-20
+### 2018-09-21
 ```
 grep 与 egrep
  1008  vim  regular_express.txt
@@ -71,7 +89,7 @@ grep 与 egrep
  1041  echo 'AxyzxyzxyzC' | egrep 'A(xyz)+C'
  1042  egrep -n '[!>]' regular_express.txt 
 ```
-### 2018-09-19
+### 2018-09-20
 ```
 复习：
 1. cat > catfile   使用 cat 在键盘上面输入一些数据，然后写入一个档案内
@@ -115,7 +133,7 @@ xargs命令是给其他命令传递参数的一个过滤器，也是组合多个
    ls *.jpg | xargs -n1 -I cp {} /data/images  复制所有图片文件到 /data/images 目录下：
    cat url-list.txt | xargs wget -c 假如你有一个文件包含了很多你希望下载的URL，你能够使用xargs下载所有链接：
 ```
-### 2018-09-18
+### 2018-09-19
 ```
 1. join 比较全面的例子 https://www.cnblogs.com/agilework/archive/2012/04/18/2454877.html
    语　　法：join [-i][-a<1或2>][-e<字符串>][-o<格式>] [-t<字符>][-v<1或2>][-1<栏位>][-2<栏位>][--help] [--version][文件1][文件2] 
