@@ -1,6 +1,9 @@
 ### 2018-09-23
 ```
+awk 语法如下:
 awk '条件类型 1{动作 1} 条件类型 2{动作 2} ...' filename
+awk '{pattern + action}' 或者 awk 'pattern {action}'
+
   985  cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1 "\t" $3}'
   986  cat /etc/passwd
   987  cdl
@@ -18,6 +21,21 @@ printf "%10s %10d %10d %10d %10.2f\n", $1, $2, $3, $4, total}'
      VBird      23000      24000      25000   72000.00
     DMTsai      21000      20000      23000   64000.00
      Bird2      43000      42000      41000  126000.00
+
+***********学习文件:鸟哥推荐的awk.pdf*******
+[root@localhost awkTest]# cat emp.dat 
+A125 Jenny 100 210
+A341 Dan 110 215
+P158 Max 130 209
+P148 John 125 220
+A123 Linda 95 210
+ 1023  awk '{if(NR>=1) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+ 1024  awk '{ printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+ 1025  awk '{if(NR>=2) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+ 1026  awk '{if($4>=210) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+ 1027  awk '{if($1 ~/^A/) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+
+
 ```
 ### 2018-09-22
 ```
