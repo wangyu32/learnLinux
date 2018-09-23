@@ -1,4 +1,157 @@
-### 2018-09-18
+### 2018-09-23
+```
+awk 语法如下:
+awk '条件类型 1{动作 1} 条件类型 2{动作 2} ...' filename
+awk '{pattern + action}' 或者 awk 'pattern {action}'
+
+  985  cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1 "\t" $3}'
+  986  cat /etc/passwd
+  987  cdl
+  988  last | awk '{print $1 "\t" $3}'
+  989  last | awk '{print $1 "\t lines: " NR "\t columns: " NF}'
+  990  last | awk '{print $1 "\t" $3}'
+  991  cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1 "\t" $3}'
+  992  cat /etc/passwd | awk 'BEGIN {FS=":"} $3 < 10 {print $1 "\t" $3}'
+
+# 计算总和
+[root@localhost awkTest]# cat pay.txt | awk '{if(NR==1) printf "%10s %10s %10s %10s %10s\n",$1,$2,$3,$4,"Total"} 
+NR>=2{total = $2 + $3 + $4
+printf "%10s %10d %10d %10d %10.2f\n", $1, $2, $3, $4, total}'
+      Name        1st        2nd        3th      Total
+     VBird      23000      24000      25000   72000.00
+    DMTsai      21000      20000      23000   64000.00
+     Bird2      43000      42000      41000  126000.00
+
+***********学习文件:鸟哥推荐的awk.pdf*******
+[root@localhost awkTest]# cat emp.dat 
+A125 Jenny 100 210
+A341 Dan 110 215
+P158 Max 130 209
+P148 John 125 220
+A123 Linda 95 210
+ 1023  awk '{if(NR>=1) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+ 1024  awk '{ printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+ 1025  awk '{if(NR>=2) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+ 1026  awk '{if($4>=210) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+ 1027  awk '{if($1 ~/^A/) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+
+
+```
+### 2018-09-22
+```
+printf  打印格式化
+ 1007  vim printf.txt
+ 1008  printf '%s\t %s\t %s\t %s\t %s\t \n' `cat printf.txt'
+ 1009  printf '%s\t %s\t %s\t %s\t %s\t \n' `cat printf.txt`
+ 1010  printf '%10s %5i %5i %5i %8.2f \n' `cat printf.txt |\
+grep -v Name`
+ 1011  printf '%10s %5i %5i %5i %8.1f \n' `cat printf.txt | grep -v Name`
+ 1012  printf '%10s %5i %5i %5.1f %8.1f \n' `cat printf.txt | grep -v Name`
+ 1013  printf '\x45\n'
+
+sed 可以分析 Standard Input (STDIN) 的数据， 然后将数据经过处理后，再将他输出到 standrad out (STDOUT) 的一个工具
+ 1017  nl /etc/passwd | sed -n '2,5d'
+ 1018  nl /etc/passwd | sed '2,5d'
+ 1019  nl /etc/passwd | sed '2d'
+ 1020  nl /etc/passwd | sed '3,$d'
+ 1021  nl /etc/passwd | sed '2a drink tea'
+ 1022  nl /etc/passwd | sed '2,$a drink tea'
+ 1023  nl /etc/passwd | sed '2a drink tea or ....\'
+ 1024  nl /etc/passwd | sed '2a drink tea or ....\
+drink beer?'
+ 1025  nl /etc/passwd | sed '2,5c No2-5 number'
+ 1026  nl /etc/passwd | sed -n '2,5p'
+ 1027  ifconfig
+ 1028  ifconfig ens33
+ 1029  ifconfig ens33 | grep 'inet '
+ 1030  ifconfig ens33 | grep 'inet ' | sed 's/netmask.*$//g'
+ 1031  ifconfig ens33 | grep 'inet ' | sed 's/^.*inet//g' | sed 's/netmask.*$//g'
+
+```
+### 2018-09-21
+```
+grep 与 egrep
+ 1008  vim  regular_express.txt
+ 1009  echo $LANG
+ 1010  LANG=en
+ 1011  export LANg
+ 1012  export LANG
+ 1013  echo $LANG
+ 1014  grep -n 'the' regular_express.txt 
+ 1015  grep -vn 'the' regular_express.txt 
+ 1016  grep -n 't[ae]st' regular_express.txt 
+ 1017  grep -n 'oo' regular_express.txt 
+ 1018  grep -n '[^g]oo' regular_express.txt 
+ 1019  grep -n '[^a-z]oo' regular_express.txt 
+ 1020  grep -n '^the' regular_express.txt 
+ 1021  grep -n '^[a-z]' regular_express.txt 
+ 1022  grep -n '^[^a-zA-Z]' regular_express.txt 
+ 1023  grep -n '\.$' regular_express.txt 
+ 1024  grep -n '^$' regular_express.txt 
+ 1025  grep -v '^$' /etc/rsyslog.conf | grep -v '^#' 
+ 1026  grep -n 'g..d' regular_express.txt 
+ 1027  grep -n 'ooo*' regular_express.txt 
+ 1028  grep -n 'goo*g' regular_express.txt 
+ 1029  grep -n 'g*g' regular_express.txt 
+ 1030  grep -n 'g.*g' regular_express.txt 
+ 1031  grep -n '[0-9][0-9]*' regular_express.txt 
+ 1032  grep -n 'o\{2\}' regular_express.txt 
+ 1033  grep -n 'o\{2,5\}' regular_express.txt 
+ 1034  grep -n 'go\{2,5\}g' regular_express.txt 
+ 1035  grep -n 'go\{2,\}g' regular_express.txt 
+ 1036  source ~/.bashrc 
+ 1037  egrep -n 'go+d' regular_express.txt 
+ 1038  egrep -n 'go?d' regular_express.txt 
+ 1039  egrep -n 'gd|good' regular_express.txt 
+ 1040  egrep -n 'g(la|oo)d' regular_express.txt 
+ 1041  echo 'AxyzxyzxyzC' | egrep 'A(xyz)+C'
+ 1042  egrep -n '[!>]' regular_express.txt 
+```
+### 2018-09-20
+```
+复习：
+1. cat > catfile   使用 cat 在键盘上面输入一些数据，然后写入一个档案内
+   cat > catfile < somefile 将somefile内容输入到catfile内
+   cat >> catfile < somefile 将somefile内容appedn输入到catfile内
+   cat > catfile <<eof  输入到eof后退出
+```
+
+学习:
+```
+1. finger 用来显示用户的相关信息
+[root@localhost learnLinux]# finger
+Login     Name       Tty      Idle  Login Time   Office     Office Phone   Host
+root      root       tty1       2d  Sep 18 16:10           
+root      root       pts/0          Sep 20 09:33                           (192.168.101.1)
+root      root       pts/1          Sep 20 19:40                           (192.168.101.1)
+[root@localhost learnLinux]# finger root
+Login: root           			Name: root
+Directory: /root                    	Shell: /bin/bash
+On since 二 9月 18 16:10 (CST) on tty1    2 days 4 hours idle
+On since 四 9月 20 09:33 (CST) on pts/0 from 192.168.101.1
+   6 seconds idle
+On since 四 9月 20 19:40 (CST) on pts/1 from 192.168.101.1
+   30 seconds idle
+New mail received 三 9月 19 09:33 2018 (CST)
+     Unread since 一 1月 15 00:18 2018 (CST)
+No Plan.
+[root@localhost learnLinux]# 
+
+2. xargs 参数代换
+xargs [-0epn] command 
+详细学习地址: http://man.linuxde.net/xargs
+xargs命令是给其他命令传递参数的一个过滤器，也是组合多个命令的一个工具。它擅长将标准输入数据转换成命令行参数，xargs能够处理管道或者stdin并将其转换成特定命令的命令参数。xargs也可以将单行或多行文本输入转换为其他格式，例如多行变单行，单行变多行。xargs的默认命令是echo，空格是默认定界符。这意味着通过管道传递给xargs的输入将会包含换行和空白，不过通过xargs的处理，换行和空白将被空格取代。xargs是构建单行命令的重要组件之一。
+   cut -d':' -f1 < /etc/passwd |head -n 3| xargs finger  将 /etc/passwd 内的第一栏取出，仅取三行，使用 finger 这个指令将每个
+   cut -d':' -f1 < /etc/passwd |head -n 3| xargs -p finger  同上，但是每次执行 finger 时，都要询问使用者是否动作？
+   cut -d':' -f1 < /etc/passwd | xargs -p -n 5 finger   将所有的 /etc/passwd 内的账号都以 finger 查阅，但一次仅查阅五个账号
+   cut -d':' -f1 < /etc/passwd | xargs -p -e'lp' finger  同上，但是当分析到 lp 就结束这串指令？
+结合学习：
+   echo "rootabin" | xargs -da | xargs -p finger  将rootabin字符串使用a分隔，再使用finger分别调用分隔后的字符（用户）
+   cat arg.txt | xargs -I {} ./sk.sh -p {} -1
+   ls *.jpg | xargs -n1 -I cp {} /data/images  复制所有图片文件到 /data/images 目录下：
+   cat url-list.txt | xargs wget -c 假如你有一个文件包含了很多你希望下载的URL，你能够使用xargs下载所有链接：
+```
+### 2018-09-19
 ```
 1. join 比较全面的例子 https://www.cnblogs.com/agilework/archive/2012/04/18/2454877.html
    语　　法：join [-i][-a<1或2>][-e<字符串>][-o<格式>] [-t<字符>][-v<1或2>][-1<栏位>][-2<栏位>][--help] [--version][文件1][文件2] 
