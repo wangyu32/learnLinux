@@ -1,4 +1,4 @@
-### 2018-09-23
+### 2018-09-23,09-24 
 ```
 awk 语法如下:
 awk '条件类型 1{动作 1} 条件类型 2{动作 2} ...' filename
@@ -34,6 +34,28 @@ A123 Linda 95 210
  1025  awk '{if(NR>=2) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
  1026  awk '{if($4>=210) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
  1027  awk '{if($1 ~/^A/) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+
+数组
+[root@localhost awkTest]# cat reg.dat 
+Mary O.S. Arch. Discrete
+Steve D.S. Algorithm Arch.
+Wang Discrete Graphics O.S.
+Lisa Graphics A.I.
+Lily Discrete Algorithm
+[root@localhost awkTest]# cat course.awk 
+{for (i=2;i<=NF;i++) Number[$i]++}
+END {for (course in Number)
+	printf("%-10s %d\n", course, Number[course])	
+    }
+[root@localhost awkTest]# awk -f course.awk reg.dat 
+O.S.       2
+A.I.       1
+Algorithm  2
+D.S.       1
+Graphics   2
+Discrete   3
+Arch.      2
+[root@localhost awkTest]# 
 
 
 ```
