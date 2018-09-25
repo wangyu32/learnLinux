@@ -1,4 +1,4 @@
-### 2018-09-23,09-24 
+### 2018-09-23,09-24,09-25 
 ```
 awk 语法如下:
 awk '条件类型 1{动作 1} 条件类型 2{动作 2} ...' filename
@@ -56,6 +56,34 @@ Graphics   2
 Discrete   3
 Arch.      2
 [root@localhost awkTest]# 
+
+BEGIN 数据流
+将arr.dat写入到today_rp1
+awk -f reformat1.awk arr.dat
+ID Number	Arrival Time
+====================
+	1034	7:26
+	1025	7:27
+	1101	7:32
+	1006	7:45
+...
+...
+将arr2.dat 续写到today_rp1
+awk '{printf("        %s  %s\n", $1, $2) >> "today_rp1"}' arr2.dat
+
+
+awk与Shell结合
+awk -f reformat2.awk arr.dat 
+cat reform2.awk
+BEGIN {
+	"date" | getline # shell执行date, getline取得显示结果并以$0记录
+	print "Today is ", $2, $3 > "today_rp2"
+	print "================" > "today_rp2"
+	print "ID Number Arrival Time" > "today_rp2"
+	close ("today_rp2")
+	}
+	{printf( "%s %s\n", $1, $2) | "sort -t ' ' -k 2 -n >> today_rp2"  } 
+
 
 
 ```
