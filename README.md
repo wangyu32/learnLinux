@@ -84,6 +84,8 @@ BEGIN {
 	}
 	{printf( "%s %s\n", $1, $2) | "sort -t ' ' -k 2 -n >> today_rp2"  } 
 
+重点：reformat3.sh  在awk中使用函数
+
 
 
 ```
@@ -420,35 +422,3 @@ https://www.cnblogs.com/superGG1990/p/6844952.html
 ./test1.txt:wangyu love study linux
 ./test2.txt:wangqi is a student
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
