@@ -1,4 +1,24 @@
-### 2018-09-30 
+### 2018-10-10
+```
+1. 什么是 Shell Script
+1.1 干嘛学习 shell scripts?
+1.2 第一支 script 的撰写与执行
+1.3 撰写 shell script 的良好习惯建立
+2. 简单的 shell script 练习：
+3. 善用判断式：
+3.1 利用 test 指令的测试功能
+3.2 利用判断符号 [ ]
+3.3 Shell script 的预设变数($0, $1...)
+4. 条件判断式：
+4.1 利用 if .... then
+4.2 利用 case ..... esac 判断
+4.3 利用 function 功能
+5. 循环 (loop)
+5.1 while....do....done, until....do....done
+5.2 for...do...done
+```
+
+### 2018-09-30 10-01
 ```
 Shell script 开头
 test 命令
