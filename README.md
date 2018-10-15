@@ -1,5 +1,9 @@
 ### 2018-10-10
 ```
+Shell Debug
+```
+### 2018-10-10
+```
 1. 什么是 Shell Script
 1.1 干嘛学习 shell scripts?
 1.2 第一支 script 的撰写与执行

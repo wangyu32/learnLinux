@@ -1,0 +1,21 @@
+#!/bin/bash
+read -p "Pleas input your birthday (MMDD, ex> 0709): " bir
+now=`date +%m%d`
+
+if [ "$bir" == "$now" ]; then
+    echo "Happy birthday to you!"
+elif [ "$bir" -gt "$now" ]; then
+    echo "your birthday is" $bir
+    year=`date +%Y`
+    total_d=$(($((`date --date="$year$bir" +%s`-`date +%s`))/60/60/24))
+    echo "Your birthday will be $total_d later" 
+else
+    year=$((`date +%Y` + 1))
+    total_d=$(($((`date --date="$year$bir" +%s`-`date +%s`))/60/60/24))
+     echo "Your birthday will be $total_d later" 
+fi
+
+
+
+
+
