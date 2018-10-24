@@ -1,4 +1,39 @@
-### 2018-09-23
+### 2018-10-10
+```
+Shell Debug
+```
+### 2018-10-10
+```
+1. 什么是 Shell Script
+1.1 干嘛学习 shell scripts?
+1.2 第一支 script 的撰写与执行
+1.3 撰写 shell script 的良好习惯建立
+2. 简单的 shell script 练习：
+3. 善用判断式：
+3.1 利用 test 指令的测试功能
+3.2 利用判断符号 [ ]
+3.3 Shell script 的预设变数($0, $1...)
+4. 条件判断式：
+4.1 利用 if .... then
+4.2 利用 case ..... esac 判断
+4.3 利用 function 功能
+5. 循环 (loop)
+5.1 while....do....done, until....do....done
+5.2 for...do...done
+```
+
+### 2018-09-30 10-01
+```
+Shell script 开头
+test 命令
+
+```
+### 2018-09-29
+```
+diff 
+patch
+```
+### 2018-09-23,09-24,09-25,9-26,9-27,9-28 
 ```
 awk 语法如下:
 awk '条件类型 1{动作 1} 条件类型 2{动作 2} ...' filename
@@ -34,6 +69,58 @@ A123 Linda 95 210
  1025  awk '{if(NR>=2) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
  1026  awk '{if($4>=210) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
  1027  awk '{if($1 ~/^A/) printf "%10s %10s %10.1f %10.2f\n",$1,$2,$3,$4 }' emp.dat 
+
+数组
+[root@localhost awkTest]# cat reg.dat 
+Mary O.S. Arch. Discrete
+Steve D.S. Algorithm Arch.
+Wang Discrete Graphics O.S.
+Lisa Graphics A.I.
+Lily Discrete Algorithm
+[root@localhost awkTest]# cat course.awk 
+{for (i=2;i<=NF;i++) Number[$i]++}
+END {for (course in Number)
+	printf("%-10s %d\n", course, Number[course])	
+    }
+[root@localhost awkTest]# awk -f course.awk reg.dat 
+O.S.       2
+A.I.       1
+Algorithm  2
+D.S.       1
+Graphics   2
+Discrete   3
+Arch.      2
+[root@localhost awkTest]# 
+
+BEGIN 数据流
+将arr.dat写入到today_rp1
+awk -f reformat1.awk arr.dat
+ID Number	Arrival Time
+====================
+	1034	7:26
+	1025	7:27
+	1101	7:32
+	1006	7:45
+...
+...
+将arr2.dat 续写到today_rp1
+awk '{printf("        %s  %s\n", $1, $2) >> "today_rp1"}' arr2.dat
+
+
+awk与Shell结合
+awk -f reformat2.awk arr.dat 
+cat reform2.awk
+BEGIN {
+	"date" | getline # shell执行date, getline取得显示结果并以$0记录
+	print "Today is ", $2, $3 > "today_rp2"
+	print "================" > "today_rp2"
+	print "ID Number Arrival Time" > "today_rp2"
+	close ("today_rp2")
+	}
+	{printf( "%s %s\n", $1, $2) | "sort -t ' ' -k 2 -n >> today_rp2"  } 
+
+重点：reformat3.sh  在awk中使用函数
+
 
 
 ```
@@ -370,35 +457,3 @@ https://www.cnblogs.com/superGG1990/p/6844952.html
 ./test1.txt:wangyu love study linux
 ./test2.txt:wangqi is a student
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
