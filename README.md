@@ -412,7 +412,8 @@ add 100 200
 ```
 1. echo $RANDOM
 2. set #列出都有环境变量
-3. PS1='[\u@\h \w \A #\#]\$'
+3. PS1='[\u@\h \w \A #\#]\$' 
+   PS1 设置  命令提示字符
 4. echo $$
 5. echo $?
 6. locale -a
