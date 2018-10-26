@@ -1,4 +1,13 @@
-### 2018-10-10
+### 2018-10-26
+```
+复习Shell
+read [-pt] variable
+-p ：后面可以接提示字符！
+-t ：后面可以接等待的『秒数！』这个比较有趣～不会一直等待使用者啦！
+
+```
+
+### 2018-10-11
 ```
 Shell Debug
 ```
@@ -414,21 +423,10 @@ add 100 200
 2. set #列出都有环境变量
 3. PS1='[\u@\h \w \A #\#]\$' 
    PS1 设置  命令提示字符
-4. echo $$
-5. echo $?
+4. echo $$     目前这个 Shell 的执行绪代号
+5. echo $?     上个执行的指令所回传的值,成功返回0
 6. locale -a
 ```
-
-### 2018-09-06
-```
-14.Bash shell
-man
-alias
-type
-wy=wangyu
-echo $wy
-```
-
 ### 2018-09-08
 ```
 1. git use ssh 
@@ -449,7 +447,15 @@ https://www.cnblogs.com/superGG1990/p/6844952.html
 6. `` 中的命令会被先执行
    ls -l `locate crontab`
 ```
-
+### 2018-09-06
+```
+14.Bash shell
+man
+alias
+type
+wy=wangyu
+echo $wy
+```
 ### 2018-09-03
 ```
 正规表达法：
