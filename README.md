@@ -1,4 +1,14 @@
-### 2018-10-10
+### 2018-10-25
+```
+复习14.Bash shell
+man
+alias
+type
+set
+unset
+```
+
+### 2018-10-11
 ```
 Shell Debug
 ```
