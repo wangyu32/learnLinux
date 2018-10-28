@@ -14,8 +14,8 @@ declare -x varFromDeclare=haha
 declare -r v123=123
 echo $v123
 
-v123=234
-echo $v123
+# v123=234
+# echo $v123
 
 
 #定义数组
