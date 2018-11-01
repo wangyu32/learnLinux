@@ -352,17 +352,18 @@ wangYuYu
 ```
 ### 2018-09-12
 ```
-ulimit 可以『限制使用者的某些系统资源』的，包括可以开启的档案数量， 可以使用的 CPU 时间，可以使用的内存总量等等
-
- 1007  vbird=/home/vbird/testing/testing.x.sh
- 1008  echo ${vbird##/*/}
- 1009  echo ${vbird#/*/}
- 1010  echo ${vbird%%/*/}
- 1011  echo ${vbird%%/*}
- 1012  echo ${vbird%/*}
- 1013  echo ${vbird%/testing/TEST}
- 1014  echo ${vbird/testing/TEST}
- 1015  echo ${vbird//testing/TEST}
+1. ulimit 可以『限制使用者的某些系统资源』的，包括可以开启的档案数量， 可以使用的 CPU 时间，可以使用的内存总量等等
+2. ##* %%* linux变量处理 
+ 参考学习: https://blog.csdn.net/fengzijinliang/article/details/42520211
+ vbird=/home/vbird/testing/testing.x.sh
+ echo ${vbird##/*/}  		testing.x.sh 				<==删除了 /home/vbird/testing/
+ echo ${vbird#/*/} 		vbird/testing/testing.x.sh 		<==仅删除 /home/ 而已
+ echo ${vbird%%/*/}		/home/vbird/testing/testing.x.sh 	<==都没被删除
+ echo ${vbird%%/*}		  					<==被删除光了！
+ echo ${vbird%/*}		/home/vbird/testing 			<==只删除 /testing.x.sh 部分
+ echo ${vbird%/testing/TEST}	
+ echo ${vbird/testing/TEST}	/home/vbird/TEST/testing.x.sh           将 vbird 变数中的 testing 取代为 TEST
+ echo ${vbird//testing/TEST}	/home/vbird/TEST/TEST.x.sh		表示全部的字符串都取代啊！
 
 ```
 ### 2018-09-11
