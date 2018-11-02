@@ -1,6 +1,22 @@
 
 ### 2018-10-26
 ```
+让进程在后台可靠运行的几种方法
+1. nohup  
+学习地址： https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/
+通常用法 nohup ping www.ibm.com & 
+nohup 的使用是十分方便的，只需在要处理的命令前加上 nohup 即可，标准输出和标准错误缺省会被重定向到 nohup.out 文件中。  
+一般我们可在结尾加上"&"来将命令同时放入后台运行，也可用">filename 2>&1"来更改缺省的重定向文件名。
+2. setsid
+setsid ping www.baidu.com
+3. & 
+(ping www.baidu.com &)
+直接 ping www.baidu.com &  不行，关闭session，进程就结束了
+
+
+```
+### 2018-10-26
+```
 权限掩码umask
 一　权限掩码umask
 umask是chmod配套的，总共为4位（gid/uid,属主，组权，其它用户的权限）,不过通常用到的是后3个，  
