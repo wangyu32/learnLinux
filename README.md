@@ -1,4 +1,12 @@
-### 2018-11-07
+### 2018-11-09
+```
+git push 免密要点:
+1.配置ssh
+2.一定要使用git@github.com:wangyu32/learnLinux.git
+3.千万别使用https下载，千万别使用https下载，千万别使用https下载，
+```
+
+### 2018-11-07,08
 ```
 查询PS1 提示符的配置
 grep 'PS1' `locate bashrc`
