@@ -1,3 +1,11 @@
+### 2018-11-13
+```
+Linux 的账号与群组
+1.1 使用者识别： UID 与 GID
+1.2 使用者账号：/etc/passwd, /etc/shadow
+/etc/shadow一行数据例子：理解下列式子含义
+dmtsai:$1$8zdAKdfC$XDa8eSus2I7nQL7UjRsIy/:13025:5:60:7:2:13125:
+```
 ### 2018-11-09
 ```
 git push 免密要点:
