@@ -1,3 +1,40 @@
+
+### 2018-11-19
+```
+2. 账号管理：
+2.1 新增与移除使用者： useradd, 相关设定档, passwd, usermod, userdel
+ useradd [-u UID] [-g initial_group] [-G other_group] -[Mm] [-c 说明栏] [-d home] [-s shell] username
+ passwd  修改密码
+ usermod [-cdegGlsuLU] username
+ userdel [-r] username   删除用户
+
+查看与用户wangyu有关的信息：  grep wangyu /etc/passwd /etc/shadow /etc/group /etc/gshadow
+以下4个为与用户相关比较重要的文档：
+/etc/passwd
+例子：root:x:0:0:root:/root:/bin/bash
+每一行使用『:』分隔开，共有七个东东，解释:
+账号名称:密码:UID:GIU:用户描述:主目录:登陆shell
+
+/etc/shadow
+例子：root:$6$G.UuN12DHQ72AvEm$.EAuiDd0bIKgSW4mzQooWKc9Txpj2mTG3beoFfAtd4S.3HmXRO6oqGYHt1/ekAkZAgIRZqk6bR2tVd7JASBkA/::0:99999:7:::
+每一行使用『:』分隔开，共有九个东东，解释:
+账号名称:密码:最近更动密码的日期:密码不可被更动的天数:密码需要重新变更的天数:密码需要变更期限前的警告期限:密码过期的恕限时间:账号失效日期:保留
+
+/etc/group
+以冒号『:』作为字段的分隔符，共分为四栏
+例子：root:x:0:
+组名:组密码:GID:支持的账号
+
+/etc/gshadow
+以冒号『:』作为字段的分隔符，共分为四栏
+例子：root:::
+群名:密码:群管理员账号:该群组的所属账号
+
+2.2 使用者功能： chsh, chfn, finger, id
+finger wangyu
+id wangyu
+
+```
 ### 2018-11-13
 ```
 Linux 的账号与群组
