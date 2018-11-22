@@ -1,3 +1,8 @@
+### 2018-11-22
+```
+2.3 新增与移除群组： groupadd, groupmod, groupdel, gpasswd, newgrp
+2.4
+```
 
 ### 2018-11-19
 ```
