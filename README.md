@@ -1,5 +1,6 @@
 ### 2018-11-22
 ```
+使用用户wangyu学习linux，尽量不使用root用户操作
 2.3 新增与移除群组： groupadd, groupmod, groupdel, gpasswd, newgrp
 2.4
 ```
