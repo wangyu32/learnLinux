@@ -1,3 +1,13 @@
+### 2018-11-25
+```
+在阿里云上使用wangyu用户配置git,步骤
+1.    ssh-keygen -t rsa -C "28567777@qq.com"             //仅配置这个能拉取
+1.1   git config --global user.name "wangyu32"           //只有配置这个才能git push
+1.2   git config --global user.email "285677770@qq.com"  //只有配置这个才能git push
+2. cat id_rsa.pub >> authorized_keys
+3. github网站内配置ssh的key
+```
+
 ### 2018-11-22
 ```
 使用用户wangyu学习linux，尽量不使用root用户操作
