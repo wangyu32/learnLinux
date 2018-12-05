@@ -1,6 +1,7 @@
 ### 2018-11-25
 ```
 在阿里云上使用wangyu用户配置git,步骤
+使用root用户给wangyu用户对目录learnLinux授权,chown -R wangyu learnLinux
 1.    ssh-keygen -t rsa -C "28567777@qq.com"             //仅配置这个能拉取
 1.1   git config --global user.name "wangyu32"           //只有配置这个才能git push
 1.2   git config --global user.email "285677770@qq.com"  //只有配置这个才能git push
@@ -433,6 +434,7 @@ wangYuYu
 
 ### 2018-09-15
 ```
+395 数据流重导向
 1.1 > >> 1> 1>> 2> 2>> 区别
 1.2 /dev/null
 1.3 2>&1 将标准输出和错误输出写到一个文件里
@@ -452,7 +454,7 @@ wangYuYu
 # 只要不是 test1, test2, test3, test4, test5 之外的其它 test? ，
 # 若存在的话，就拷贝到 /tmp
 [root@linux ~]# cd /lib/modules/`uname -r`/kernel/drivers
-# 被 ` ` 括起来的内容『会先执行
+# 被 ` ` 括起来的内容会先执行
 
 ```
 
