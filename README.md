@@ -566,7 +566,8 @@ https://www.cnblogs.com/superGG1990/p/6844952.html
    myname="$name its me"
    echo $myname
 # 单引号将使变量失去内容
-5. uname -r
+5. uname -r 查看linux版本信息
+uname -a 查看linux版本信息
 6. `` 中的命令会被先执行
    ls -l `locate crontab`
 ```
